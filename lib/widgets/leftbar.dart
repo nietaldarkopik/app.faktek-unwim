@@ -1,5 +1,6 @@
 import 'package:faktekapp/controllers/dashboard.dart';
 import 'package:faktekapp/controllers/jadwalMengajar.dart';
+import 'package:faktekapp/controllers/presensiMahasiswa.dart';
 import 'package:faktekapp/main.dart';
 import 'package:flutter/material.dart';
 
@@ -53,7 +54,7 @@ class LeftBarWidget extends StatelessWidget {
             leading: const Icon(Icons.check_box_rounded),
             title: const Text(' Presensi Mahasiswa '),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PresensiMahasiswaController()));
             },
           ),
           ListTile(

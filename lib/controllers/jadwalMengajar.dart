@@ -15,6 +15,12 @@ class JadwalMengajarController extends StatefulWidget {
 }
 
 class _JadwalMengajarControllerState extends State<JadwalMengajarController> {
+  final List<String> items = [
+    "Item 1",
+    "Item 2",
+    "Item 3",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,45 +29,1473 @@ class _JadwalMengajarControllerState extends State<JadwalMengajarController> {
         ),
         backgroundColor: kLight,
         drawer: LeftBarWidget(), //Drawer
-        body: 
-          Container(
-            //margin: EdgeInsetsDirectional.all(10),
-            padding: EdgeInsetsDirectional.all(10),
-            decoration: BoxDecoration(color: kWhite,border: Border.all(color: kWhite, width: 1)),
-            //color: Colors.amberAccent,
-            constraints: const BoxConstraints.expand(), // Membuat kotak mengisi ruang yang tersedia
-            child: ListView(
-              children: <Widget>[
-                Text("Jadwal Mengajar Dosen",style: text1, textAlign: TextAlign.center,),
-                Container(
-                  decoration: BoxDecoration(color: kGray100, borderRadius: BorderRadius.all(Radius.circular(10)), border: Border.all(color: kDark)),
-                  padding: EdgeInsetsDirectional.all(kPadding16),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    textDirection: TextDirection.ltr,
-                    children: <Widget> [
-                      Text('Program studi', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Semester', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Kode', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Mata Kuliah', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('SKS', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Hari', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Jam Mulai', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Jam Selesai', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Ruangan', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Kelas', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Paket', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Jumlah Mahasiswa', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Keterangan', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text('Zoom', textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),),
-                    ],
+        body: Container(
+          //margin: EdgeInsetsDirectional.all(10),
+          padding: EdgeInsetsDirectional.all(10),
+          decoration: BoxDecoration(
+              color: kWhite, border: Border.all(color: kWhite, width: 1)),
+          //color: Colors.amberAccent,
+          constraints: const BoxConstraints
+              .expand(), // Membuat kotak mengisi ruang yang tersedia
+          child: ListView(
+            children: <Widget>[
+              Text(
+                "Jadwal Mengajar Dosen",
+                style: text1,
+                textAlign: TextAlign.center,
+              ),
+              Container(
+                  decoration: BoxDecoration(
+                    color: kGray100,
+                    //borderRadius: BorderRadius.all(Radius.circular(10)),
+                    //border: Border.all(color: kDark)
                   ),
-                )
-              ],
-            ),
-          )
-      );
+                  padding: EdgeInsetsDirectional.all(kPadding4),
+                  margin: EdgeInsets.only(top: 20),
+                  child: Column(children: [
+                    ExpansionTile(
+                      title: Text('Senin'),
+                      tilePadding: EdgeInsetsDirectional.all(kPadding4),
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4, left: 4, right: 4, bottom: 4),
+                          child: ExpansionTile(
+                            childrenPadding:
+                                EdgeInsetsDirectional.all(kPadding4),
+                            title: Text('Mata Kuliah'),
+                            tilePadding: EdgeInsetsDirectional.all(kPadding8),
+                            children: <Widget>[
+                              Card(
+                                elevation: 50,
+                                color: kGray400,
+                                child: Container(
+                                  //decoration: BoxDecoration(
+                                  //color: kGray100,
+                                  //borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  //border: Border.all(color: kGray500)
+                                  //    ),
+                                  padding: EdgeInsetsDirectional.all(kPadding4),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    textDirection: TextDirection.ltr,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Program studi")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Semester")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Kode")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Mata Kuliah")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("SKS")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Hari")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Jam Mulai")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Jam Selesai")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Ruangan")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Kelas")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Paket")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Jumlah Mahasiswa")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Keterangan")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Zoom")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("sd fasd fdsfsda fsdafsdf sd fsd fsad fdas dsafds fdas fsd fsd fdas f"),],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    ExpansionTile(
+                      title: Text('Senin'),
+                      tilePadding: EdgeInsetsDirectional.all(kPadding4),
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4, left: 4, right: 4, bottom: 4),
+                          child: ExpansionTile(
+                            childrenPadding:
+                                EdgeInsetsDirectional.all(kPadding4),
+                            title: Text('Mata Kuliah'),
+                            tilePadding: EdgeInsetsDirectional.all(kPadding8),
+                            children: <Widget>[
+                              Card(
+                                elevation: 50,
+                                color: kGray400,
+                                child: Container(
+                                  //decoration: BoxDecoration(
+                                  //color: kGray100,
+                                  //borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  //border: Border.all(color: kGray500)
+                                  //    ),
+                                  padding: EdgeInsetsDirectional.all(kPadding4),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    textDirection: TextDirection.ltr,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Program studi")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Semester")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Kode")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Mata Kuliah")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("SKS")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Hari")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Jam Mulai")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Jam Selesai")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Ruangan")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Kelas")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Paket")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Jumlah Mahasiswa")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [
+                                                    Text("Keterangan")
+                                                  ],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Flexible(
+                                              flex: 45, // 15%
+                                              child: Container(
+                                                color: kGray400,
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("Zoom")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 10, // 60%
+                                              child: Container(
+                                                //color: kGray200,
+                                                alignment: Alignment.center,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        end: kPadding4,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text(":")],
+                                                ),
+                                              )),
+                                          Flexible(
+                                              flex: 45, // 25%
+                                              child: Container(
+                                                color: kGray100,
+                                                alignment: Alignment.centerLeft,
+                                                padding:
+                                                    EdgeInsetsDirectional.only(
+                                                        start: kPadding8,
+                                                        top: kPadding4,
+                                                        bottom: kPadding4),
+                                                child: Column(
+                                                  children: [Text("ok")],
+                                                ),
+                                              ))
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ])),
+            ],
+          ),
+        ));
   }
 }

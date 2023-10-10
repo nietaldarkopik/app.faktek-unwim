@@ -11,6 +11,20 @@ const TextStyle text1 = TextStyle(
         fontWeight: FontWeight.bold
       );
 
+const TextStyle text2 = TextStyle(
+        fontSize: 18,
+        color: Colors.black,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.bold
+      );
+
+const TextStyle text3 = TextStyle(
+        fontSize: 16,
+        color: Colors.black,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.bold
+      );
+
 const Color kPrimary = Color.fromARGB(213, 0, 53, 228);
 const Color kPrimaryHover = Color.fromARGB(209, 42, 69, 143);
 const Color kSecondary = Color.fromARGB(255, 238, 143, 0);
